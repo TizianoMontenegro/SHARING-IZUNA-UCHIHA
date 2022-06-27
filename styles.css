@@ -1,0 +1,118 @@
+body{
+    display: flex;
+    height: 100vh;
+    font-size: 40px;
+    background-color: #000;
+}
+
+.eye{
+    background-color: #f00;
+    border: 0.375em solid #000;
+    width: 12.5em;
+    height: 12.5em;
+    border-radius: 50%;
+
+    margin: auto;
+    position: relative;
+
+    box-shadow: 0 0 2.125rem 0.1125rem #f00;
+
+    
+    animation-duration: .9s;
+    animation-name: shadow;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.sharingan{
+    position: absolute;
+    inset: 0;
+
+    animation-name: animation;
+    animation-duration: .9s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.sharingan::before{
+    content: "";
+    position: absolute;
+    margin: auto;
+    background-color: #000;
+    border-radius: 50%;
+    width: 50%;
+    height: 50%;
+    inset: 0;
+    z-index: 100;
+}
+
+.sharingan::after{
+    content: "";
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    background-color: #f00;
+    border-radius: 50%;
+    width: 20%;
+    height: 20%;
+    z-index: 200;
+}
+
+.blade{
+    position: absolute;
+    height: 50%;
+    width: 3.125em;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    margin: 0 auto;
+}
+
+.blade-1{
+    top: 5.125em;
+    left: 5.125em;
+    transform: rotate(125deg);
+    transform-origin: center;
+}
+
+.blade-2{
+    top: 5.125em;
+    right: 5.125em;
+    transform: rotate(-125deg);
+    transform-origin: center;
+}
+
+@keyframes animation {
+    0% {
+        transform: scale(0) rotate(0deg);
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+@keyframes shadow {
+    0% {
+        box-shadow: 0 0 .7rem 0rem #f00;
+    }
+    100% {
+        box-shadow: 0 0 3.125rem .8125rem #f00;
+    }
+}
+
+@media(max-width: 690px),(max-height: 690px){
+    body{
+        font-size: 30px;
+    }
+}
+@media(max-width: 540px),(max-height: 540px){
+    body{
+        font-size: 20px;
+    }
+}
+@media(max-width: 400px),(max-height: 400px){
+    body{
+        font-size: 14px;
+    }
+}
